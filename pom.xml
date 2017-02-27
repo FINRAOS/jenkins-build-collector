@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <!-- Baseline Jenkins version you use to build and test the plugin. Users must have this version or newer to run. -->
+    <version>1.580.1</version>
+    <relativePath/>
+  </parent>
+  <groupId>org.finra.jenkins</groupId>
+  <artifactId>build-collector-core</artifactId>
+  <version>1.1</version>
+  <packaging>hpi</packaging>
+
+  <name>Build Collector</name>
+  <description>Gathers and stores information from builds to publish to external systems. This plugin comes with support for MongoDB and Elasticsearch.</description>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/Build+Collector+Plugin</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+  <!-- If you want this to appear on the wiki page:
+  <developers>
+    <developer>
+      <id>bhacker</id>
+      <name>Bob Q. Hacker</name>
+      <email>bhacker@nowhere.net</email>
+    </developer>
+  </developers>
+  -->
+  <!-- Assuming you want to host on @jenkinsci:
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+    <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
+  </scm>
+   -->
+<!--   <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories> -->
+<!--   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build> -->
+
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>cm_internal</name>
+	        <url>http://artifactory.finra.org/artifactory/cm_internal</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>central</id>
+	        <name>cm_internal</name>
+	        <url>http://artifactory.finra.org/artifactory/cm_internal</url>
+	    </snapshotRepository>
+	</distributionManagement> 
+
+	<dependencies>
+		<dependency>
+		  <groupId>io.searchbox</groupId>
+		  <artifactId>jest</artifactId>
+		  <version>1.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>3.0.2</version>
+		 </dependency>
+		 <dependency>
+	    	<groupId>com.google.code.gson</groupId>
+	    	<artifactId>gson</artifactId>
+	    	<version>2.3.1</version>
+	     </dependency>
+	</dependencies>
+
+</project>
